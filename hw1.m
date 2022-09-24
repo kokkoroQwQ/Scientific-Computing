@@ -21,20 +21,15 @@ figure;
 hold on;
 plot(x, y, '*');
 
-P = zeros([5, 15]);
-
-i = 1;
-N = [1,2,3,4,14];
+N = [1,2,3,14];
 for n = N
     p = polyfit(x, y, n);
-    P(i, 1:n+1) = p;
     yp = polyval(p, xp);
     plot(xp, yp);
-    i = i + 1;
 end
 
 xlabel('x'), ylabel('y');
-legend('original data ', 'n = 1', 'n = 2', 'n = 3', 'n = 4', 'n = 14');
+legend('original data ', 'n = 1', 'n = 2', 'n = 3', 'n = 14');
 title('the Polynomial fit with different order n');
 
 %%
